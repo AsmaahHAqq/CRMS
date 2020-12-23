@@ -8,15 +8,15 @@ function OpenCon()
  $dbname = "crms";
 
 
- $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname) or die("Connect failed: %s\n". $conn -> error);
+ $mysqli= new mysqli($dbhost, $dbuser, $dbpass,$dbname) or die("Connection failed: %s\n". $conn -> error);
 
 
- return $conn;
+ return $mysqli;
  }
 
-function CloseCon($conn)
+function CloseCon($mysqli)
  {
- $conn -> close();
+ $mysqli -> close();
  }
 
 ?>
