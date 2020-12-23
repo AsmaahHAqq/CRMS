@@ -136,7 +136,7 @@ include ('navbar.php'); ?>
         </div>
         <div class="form-row">
           <div class="col-lg-7">
-            <button type="submit"  class="btn1 mt-3 mb-5">Login</button>
+            <button type="submit"  class="btn1 mt-3 mb-5">Register</button>
           </div>
         </div>
         <div class="form-row">
