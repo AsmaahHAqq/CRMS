@@ -1,22 +1,11 @@
 <?php
-
-function OpenCon()
- {
- $dbhost = "localhost";
- $dbuser = "root";
- $dbpass = "t6vY0x7YMmb4aW5c";
- $dbname = "crms";
-
-
- $mysqli= new mysqli($dbhost, $dbuser, $dbpass,$dbname) or die("Connection failed: %s\n". $conn -> error);
-
-
- return $mysqli;
- }
-
-function CloseCon($mysqli)
- {
- $mysqli -> close();
- }
-
-?>
+ define('DBSERVER','localhost'); //server
+ define('DBUSERNAME','root');//username
+ define('DBPASSWORD','t6vY0x7YMmb4aW5c'); //password
+ define('DBNAME','crms'); //db name
+// connect to mysql database
+ $db = mysqli_connect(DBSERVER,DBUSERNAME,DBPASSWORD,DBNAME);
+ //check db fann_get_total_connections
+ if($db ==false){
+   die("Error: connection error."  .mysqli_connect_error());
+ }?>

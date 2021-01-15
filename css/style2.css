@@ -1,0 +1,31 @@
+
+.btn1{
+  border:none;
+  outline:none;
+  height: 50px;
+  width: 50%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn1:hover{
+  background: white;
+  border: 1px solid;
+  color: black;
+}
+input{
+  margin-bottom: 10px;
+  padding: 5px;
+}
+textarea{
+  margin-bottom: 10px;
+  padding: 5px;
+}
+button{
+  margin-top: 10px;
+  padding: 5px;
+}
+form{
+  margin:auto;
+}
