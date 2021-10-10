@@ -1,20 +1,27 @@
-<?php include_once 'db_connection.php';
-if(isset($_POST['submit']))
-{
-  $Fname = $_POST['Firstname'];
-  $Lname = $_POST['Lastname'];
-  $Name_of_Business = $_POST['Name of Business'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+<?php include "db_connection.php"?>
+<?php
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "t6vY0x7YMmb4aW5c";
+$dbname = "crms";
 
-  $sql = "INSERT INTO user (Fname, Lname, Name_of_Business, email, password) VALUES ('$Fname','$Lname',
-  '$Name_of_Business','$email','$password')";
-  if (mysli_query($conn,$sql)) {
-    echo "You have been registered successfully!";
+ $mysqli= new mysqli($dbhost, $dbuser, $dbpass,$dbname) or die("Connection failed: %s\n". $conn -> error);
+
+//$name = $_POST['name'];
+$address = $_POST['address'];
+$phone_no = $_POST['phone_number'];
+$email = $_POST['email'];
+//$comments = $_POST['comments'];
+
+
+
+$sql = "INSERT INTO contacts('address,phone_number,email') VALUES ('$address,$phone_no,$email')";
+  if(!mysqli_query($mysqli,$sql))
+  {
+    echo 'Not Inserted';
   }
   else{
-    echo "Error:" . $sql . ":-" .mysqli_error($conn);
+    echo 'Inserted';
   }
-  mysli_close($conn);
-}
-?>
+//  header("refresh; url=contacts.php");
+ ?>
